@@ -1,0 +1,162 @@
+/* === Font Setup === */
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/GOTHMLIG.TTF");
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url("../fonts/gotham/GOTHMBOK.TTF");
+}
+
+@font-face {
+  font-family: "Gotham Med";
+  src: url("../fonts/gotham/GOTHMMED.TTF");
+}
+
+/* === Overall page settings === */
+body {
+  margin: 0;
+  background-color: #fff0f5; /* 淡粉色背景 */
+  font-family: "Gotham", sans-serif;
+}
+
+/* === Navigation Bar === */
+nav {
+  background-color: #fff0f5;
+  padding: 20px 40px;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+
+nav li {
+  margin-bottom: 15px;
+}
+
+/* Logo 图片尺寸加大 */
+nav li img {
+  width: 320px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* 导航字体更大、留白更多 */
+nav li a {
+  letter-spacing: 1px;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: #4b0082;
+}
+
+nav li a:hover {
+  background-color: #ffeaf2;
+  color: #e93f7b;
+}
+
+.current_page a {
+  color: black;
+  font-weight: bold;
+}
+
+/* === Main content area === */
+.content-area {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.main-box {
+  background-color: white;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* === Text and images === */
+h1 {
+  font-size: 32px;
+  text-align: center;
+  color: #024258;
+  font-family: "Gotham Med", sans-serif;
+  font-variant: small-caps;
+}
+
+h2 {
+  font-size: 24px;
+  color: #024258;
+  font-family: "Gotham Med", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  color: #424144;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+figure {
+  text-align: left;
+  margin: 30px 0;
+}
+
+figure img {
+  width: 50%;
+  max-width: 100%;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+figcaption {
+  text-align: left;
+  font-variant: small-caps;
+  font-size: 14px;
+  color: #424144;
+  margin-top: 5px;
+}
+
+/* === Variables === */
+:root {
+  --sweet-pink: #f8c4d9;
+  --soft-blue: #a6e3e9;
+  --warm-gray: #f7f7f6;
+  --deep-pink: #d75a87;
+}
+
+/* === Buttons === */
+.button {
+  background-color: var(--deep-pink);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #e678a4;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #424144;
+}
