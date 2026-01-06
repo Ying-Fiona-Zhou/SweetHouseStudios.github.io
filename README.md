@@ -5,7 +5,7 @@ Built as a static site and deployed with GitHub Pages.
 
 ## Live Demo
 
-- Website: https://github.com/Ying-Fiona-Zhou/SweetHouseStudios.github.io
+- Website: https://sweethousestudios.onrender.com
 - Repo: https://github.com/Ying-Fiona-Zhou/SweetHouseStudios.github.io
 
 ## Tech Stack
