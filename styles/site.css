@@ -15,83 +15,150 @@
 }
 
 /* === Overall page settings === */
-body {
+/* Background and typography */
+body{
   margin: 0;
-  background-color: #fff0f5; /* 淡粉色背景 */
-  font-family: "Gotham", sans-serif;
+  font-family: "Gotham Book", "Gotham", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 20% 0%, #fff7fb 0%, var(--page-bg) 60%, #ffffff 140%);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* === Navigation Bar === */
 nav {
-  background-color: #fff0f5;
-  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 14px 28px; /* 给导航一点呼吸空间 */
+  background: rgba(255, 240, 245, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
+
 nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
   list-style: none;
-  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+
+  display: flex;               
   align-items: center;
-  gap: 30px;
+  justify-content: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 nav li {
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
+
+nav li:first-child{
+  margin-right: auto;          /* 让 logo 在左，菜单在右 */
+}
+
+nav li:first-child a{
+  display: flex;               /* 让 logo 垂直居中 */
+  align-items: center;
+}
+
+
 
 /* Logo 图片尺寸加大 */
 nav li img {
-  width: 320px;
-  display: block;
-  margin-bottom: 20px;
+  width: 240px;
+  margin-bottom: 0;
 }
 
 /* 导航字体更大、留白更多 */
-nav li a {
-  letter-spacing: 1px;
-  font-size: 22px;
-  font-weight: 600;
-  padding: 14px 20px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+nav li a{
+  color: var(--brand);
   text-decoration: none;
-  color: #4b0082;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  padding: 8px 14px;
+  line-height: 1;
+  position: relative;
+  display: inline-block; 
 }
 
-nav li a:hover {
-  background-color: #ffeaf2;
-  color: #e93f7b;
+nav li a:hover{
+  color: var(--accent);
+  background: rgba(255,255,255,0.55);
 }
 
-.current_page a {
-  color: black;
-  font-weight: bold;
+
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 8px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+  opacity: 0.5;
+}
+
+nav li a:hover::after {
+  transform: scaleX(1);
+}
+
+
+.current_page a{
+  color: var(--text);
+  background: rgba(255,255,255,0.75);
+}
+
+.current_page a::after{
+  transform: scaleX(1);
 }
 
 /* === Main content area === */
-.content-area {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* Container */
+.content-area{
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 18px;
 }
 
-.main-box {
-  background-color: white;
-  margin: 40px auto;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.main-box{
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 42px;
 }
+
+
+/* 让 Services 和 Events 页面的列表更有设计感 */
+article ul {
+  padding-left: 22px;
+  margin: 18px 0;
+}
+
+article li{
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+article li::marker{
+  content: "✨ ";
+}
+
 
 /* === Text and images === */
-h1 {
-  font-size: 32px;
-  text-align: center;
-  color: #024258;
-  font-family: "Gotham Med", sans-serif;
-  font-variant: small-caps;
+h1{
+  font-variant: normal;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  margin-bottom: 18px;
 }
 
 h2 {
@@ -100,11 +167,11 @@ h2 {
   font-family: "Gotham Med", sans-serif;
 }
 
-p {
-  font-size: 16px;
-  color: #424144;
-  line-height: 1.6;
-  margin-top: 20px;
+
+p{
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 70ch;
 }
 
 figure {
@@ -112,33 +179,102 @@ figure {
   margin: 30px 0;
 }
 
-figure img {
-  width: 50%;
+/* IMPORTANT: remove the "50% image" feeling */
+figure img{
+  width: 100%;
   max-width: 100%;
-  border-radius: 5px;
+  height: auto;
+  border-radius: var(--radius);
   display: block;
-  margin-bottom: 10px;
 }
 
-figcaption {
+figcaption{
   text-align: left;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
   font-variant: small-caps;
-  font-size: 14px;
-  color: #424144;
-  margin-top: 5px;
 }
+
+/* ===== Masonry (Published logos) ===== */
+.gallery-masonry{
+  columns: 3 260px;     /* 3列上限，每列最小260px */
+  column-gap: 18px;
+  margin-top: 22px;
+}
+
+.gallery-masonry figure {
+  margin: 0;
+  display: inline-block; /* 修复某些浏览器下瀑布流切断图片的 Bug */
+  width: 100%;
+  padding-bottom: 18px; /* 用 padding 代替 margin 确保对齐 */
+}
+
+.gallery-masonry figure.logo img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid var(--card-border);
+  box-sizing: border-box;
+}
+
+.gallery-masonry figure.service_example img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+
+
+/* Card look for logos */
+figure.logo{
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 10px 26px rgba(16,24,40,0.08);
+}
+
+.gallery-grid figure.logo img{
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #fff;
+  padding: 14px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+}
+
+
+figure.logo figcaption{
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(17,24,39,0.65);
+}
+
 
 /* === Variables === */
-:root {
-  --sweet-pink: #f8c4d9;
-  --soft-blue: #a6e3e9;
-  --warm-gray: #f7f7f6;
-  --deep-pink: #d75a87;
+/* ===== Modern polish (append to bottom of site.css) ===== */
+:root{
+  --page-bg: #fff0f5;
+  --text: #222;
+  --muted: rgba(17, 24, 39, 0.65);
+  --card-bg: #fff;
+  --card-border: rgba(0,0,0,0.06);
+  --shadow: 0 18px 50px rgba(16,24,40,0.12);
+  --shadow-soft: 0 10px 26px rgba(16,24,40,0.08);
+  --radius: 16px;
+  --brand: #4b0082;
+  --accent: #e93f7b;
 }
 
 /* === Buttons === */
 .button {
-  background-color: var(--deep-pink);
+  background-color: var(--accent); 
   color: white;
   font-weight: bold;
   padding: 10px 20px;
@@ -146,17 +282,108 @@ figcaption {
   border: none;
   transition: background-color 0.3s ease;
   font-size: 16px;
+  box-shadow: 0 10px 26px rgba(233,63,123,0.18);
+  transform: translateY(0);
 }
 
-.button:hover {
-  background-color: #e678a4;
+.button:hover{
+  transform: translateY(-1px);
 }
 
 /* === Footer === */
-footer {
+footer{
   text-align: center;
-  margin-top: 40px;
-  padding: 20px 10px;
+  margin-top: 56px;
+  padding: 26px 18px 30px;
   font-size: 14px;
-  color: #424144;
+  color: rgba(17,24,39,0.60);
+}
+
+footer p{
+  max-width: 95ch;   /* 覆盖全局 p 的 70ch */
+  margin: 10px auto; /* 居中 */
+  line-height: 1.7;
+}
+
+footer p:last-child{
+  margin-top: 14px;
+  color: rgba(17,24,39,0.75);
+  font-weight: 600;
+}
+
+
+.logo img, .service_example img{
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.logo img:hover, .service_example img:hover{
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* ===== Galleries ===== */
+/* Use on sections that contain many figures */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+/* Make service_example look like modern cards */
+figure.service_example,
+figure.logo{
+  margin: 0;
+}
+
+figure.service_example img{
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+
+
+/* ===== Lightbox ===== */
+.lightbox[hidden]{ display:none; }
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display:grid;
+  place-items:center;
+  padding: 22px;
+}
+
+.lightbox__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 240, 245, 0.7);
+  backdrop-filter: blur(15px);
+}
+
+.lightbox__img{
+  position:relative;
+  max-width: min(1100px, 92vw);
+  max-height: 86vh;
+  border-radius: var(--radius);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.38);
+}
+
+@media (max-width: 760px){
+  .main-box{ padding: 24px; }
+  nav li img{ width: 200px; } /* 可选：让 logo 更适配手机 */
+}
+
+
+a:focus-visible{
+  outline: 3px solid rgba(233,63,123,0.35);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+a.button{
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }

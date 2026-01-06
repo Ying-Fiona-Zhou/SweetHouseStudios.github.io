@@ -1,18 +1,62 @@
 # Sweet House Studios
 
-A clean, elegant photography portfolio and event showcase site for Sweet House Studios.
+A clean, elegant, mobile-first photography portfolio and event showcase website for Sweet House Studios.
+Built as a static site and deployed with GitHub Pages.
 
-## Features
+## Live Demo
 
-- Mobile-responsive layout
-- Event photo showcase (e.g. car shows, traditional Chinese performances, birthday events)
-- Sample packages for small and large events
-- Contact form and FAQ for easy communication
-- Organized wireframes for different site sections
+- Website: https://github.com/Ying-Fiona-Zhou/SweetHouseStudios.github.io
+- Repo: https://github.com/Ying-Fiona-Zhou/SweetHouseStudios.github.io
 
+## Tech Stack
 
-## Run Locally
+- **HTML5** (semantic structure, multi-page site)
+- **CSS3** (CSS variables/design system, responsive layout)
+  - Flexbox navigation
+  - CSS Grid galleries
+  - Masonry-style layout using CSS columns
+- **JavaScript (Vanilla)** (lightbox gallery interactions, small UI behaviors)
+- **Git/GitHub** (version control)
+- **GitHub Pages** (deployment)
 
-```bash
-git clone https://github.com/Ying-Fiona-Zhou/SweetHouseStudios.github.io.git
-cd SweetHouseStudios.github.io
+## Highlights
+
+- **Responsive navigation** with sticky header and active-page styling
+- **Reusable design system** using CSS variables (`:root`) for consistent colors, spacing, radius, shadows
+- **Gallery layouts**
+  - Grid layout for consistent thumbnail sets
+  - Masonry-style layout for mixed aspect ratios
+- **Lightbox viewer** for images (overlay + focus styles for accessibility)
+- **Performance-friendly images** (recommended: `loading="lazy"` + `decoding="async"`)
+
+## Site Pages
+
+- Home
+- Services
+- Featured
+- Events
+- FAQ
+- About
+- Contact
+
+## Project Structure
+
+```text
+SweetHouseStudios.github.io/
+├─ index.html
+├─ about.html
+├─ services.html
+├─ featured.html
+├─ events.html
+├─ faq.html
+├─ contact.html
+├─ portraits.html
+├─ travelings.html
+├─ styles/
+│  └─ site.css
+├─ scripts/
+│  └─ site.js
+├─ images/
+├─ fonts/
+└─ WIREFRAMES/
+

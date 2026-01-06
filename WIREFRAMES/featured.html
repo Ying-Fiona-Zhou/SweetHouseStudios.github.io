@@ -4,6 +4,8 @@
 <head>
   <title>Featured | Sweet House Studio </title>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="../scripts/site.js" defer></script>
   <link rel="stylesheet" type="text/css" href="../styles/site.css">
 </head>
 
@@ -26,36 +28,49 @@
           <h1>Featured</h1>
 
           <figure>
-            <img alt="Newlyweds dancing" src="../images/embracing.jpg" />
+            <img
+              alt="Newlyweds dancing"
+              src="../images/embracing.jpg"
+              loading="lazy"
+              decoding="async"
+              data-lightbox
+              data-full="../images/embracing.jpg"
+            />
             <figcaption>Sea</figcaption>
           </figure>
 
-          <h1>Published</h1>
+
+          <h2>Published</h2>
           <p>Sweet House Studio is proud to have been featured in the following publications:</p>
 
-          <section>
+          <section class="gallery-masonry">
             <figure class="logo">
-              <img alt="Brides of Ithaca Logo" src="../images/BridesofIthaca.png" />
+              <img alt="Brides of Ithaca Logo" src="../images/BridesofIthaca.png" loading="lazy" decoding="async" data-lightbox />
               <figcaption>New York</figcaption>
             </figure>
+
             <figure class="logo">
-              <img alt="Celebrate the Finger Lakes Logo" src="../images/CelebrateFL.png" />
+              <img alt="Celebrate the Finger Lakes Logo" src="../images/philadelphia.png" loading="lazy" decoding="async" data-lightbox />
               <figcaption>New York City</figcaption>
             </figure>
+
             <figure class="logo">
-              <img alt="The Ithaca Citizen" src="../images/IthacaCitizen.png" />
-              <figcaption>New York City2 </figcaption>
+              <img alt="The Ithaca Citizen" src="../images/IthacaCitizen.png" loading="lazy" decoding="async" data-lightbox />
+              <figcaption>New York City</figcaption>
             </figure>
+
             <figure class="logo">
-              <img alt="Ithaca Expo Logo" src="../images/IthacaExpo.png" />
+              <img alt="Ithaca Expo Logo" src="../images/IthacaExpo.png" loading="lazy" decoding="async" data-lightbox />
               <figcaption>NYC Travel</figcaption>
             </figure>
+
             <figure class="logo">
-              <img alt="NY Weddings Top 50 Award" src="../images/NYweddings.png" />
+              <img alt="NY Weddings Top 50 Award" src="../images/NYweddings.png" loading="lazy" decoding="async" data-lightbox />
               <figcaption>NY State</figcaption>
             </figure>
+
             <figure class="logo">
-              <img alt="Finger Lakes Fotos Logo" src="../images/FLfotos.png" />
+              <img alt="Finger Lakes Fotos Logo" src="../images/FLfotos.png" loading="lazy" decoding="async" data-lightbox />
               <figcaption>Fall</figcaption>
             </figure>
           </section>
