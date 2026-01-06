@@ -44,3 +44,53 @@
     if (e.key === "Escape" && !lightbox.hidden) close();
   });
 })();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("consultBtn");
+  const dlg = document.getElementById("consultDialog");
+  const closeBtn = document.getElementById("closeDialogBtn");
+  const form = document.getElementById("consultForm");
+
+  if (!btn || !dlg || !form) return;
+
+  btn.addEventListener("click", () => {
+    if (typeof dlg.showModal === "function") dlg.showModal();
+    else dlg.setAttribute("open", ""); // fallback for older browsers
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    dlg.close?.() || dlg.removeAttribute("open");
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const name = (data.get("name") || "").toString().trim();
+    const email = (data.get("email") || "").toString().trim();
+    const phone = (data.get("phone") || "").toString().trim();
+    const eventType = (data.get("eventType") || "").toString().trim();
+    const date = (data.get("date") || "").toString().trim();
+    const message = (data.get("message") || "").toString().trim();
+
+    
+    const to = "yingzhou@gmail.com";
+
+    const subject = encodeURIComponent(`Consultation request from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone || "(not provided)"}\n` +
+      `Event type: ${eventType || "(not provided)"}\n` +
+      `Preferred date: ${date || "(not provided)"}\n\n` +
+      `Message:\n${message || "(none)"}\n`
+    );
+
+    // 打开用户的邮件客户端，内容已填好
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+    dlg.close?.() || dlg.removeAttribute("open");
+    form.reset();
+  });
+});

@@ -5,14 +5,14 @@
   <title>Contact | Sweet House Studio </title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="../scripts/site.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="../styles/site.css">
+  <script src="scripts/site.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="styles/site.css">
 </head>
 
 <body>
   <nav>
     <ul>
-      <li><a href="index.html"><img alt=" Sweet House Studio Logo" src="../images/logo.png" /></a></li>
+      <li><a href="index.html"><img alt=" Sweet House Studio Logo" src="images/logo.png" /></a></li>
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="featured.html">Featured</a></li>
@@ -32,8 +32,56 @@
           </p>
 
           <p>
-            <a class="button" href="contact.html">Book a consultation</a>
+            <buttin id="consultBtn" class="button" type="button">Book a consultation</button>
           </p>
+
+          <dialog id="consultDialog" class="modal">
+            <form id="consultForm" class="modal__panel">
+              <h2 style="margin:0 0 10px;">Book a consultation</h2>
+              <p style="margin:0 0 14px; color: var(--muted);">
+                Leave your contact info and a few details. We’ll reply within 24–48 hours.
+              </p>
+
+              <label class="field">
+                <span>Name</span>
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span>Email</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+
+              <label class="field">
+                <span>Phone (optional)</span>
+                <input name="phone" type="tel" autocomplete="tel" placeholder="e.g., 732-555-1234" />
+              </label>
+
+              <label class="field">
+                <span>Event type (optional)</span>
+                <input name="eventType" type="text" placeholder="Wedding / Family / Event..." />
+              </label>
+
+              <label class="field">
+                <span>Preferred date (optional)</span>
+                <input name="date" type="date" />
+              </label>
+
+              <label class="field">
+                <span>Message</span>
+                <textarea name="message" rows="4" placeholder="What are you looking for?"></textarea>
+              </label>
+
+              <div class="modal__actions">
+                <button class="button" type="submit">Send</button>
+                <button class="button button--ghost" id="closeDialogBtn" type="button">Cancel</button>
+              </div>
+
+              <p class="modal__fineprint">
+                By submitting, you agree we may contact you using the details provided.
+              </p>
+            </form>
+          </dialog>
 
           <section>
             <h2>Hours of Operation</h2>
