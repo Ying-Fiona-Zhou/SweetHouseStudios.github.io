@@ -43,22 +43,22 @@ Built as a static site and deployed with GitHub Pages.
 
 ```text
 SweetHouseStudios.github.io/
+├─index.html
+├─ about.html
+├─ services.html
+├─ featured.html
+├─ events.html
+├─ faq.html
+├─ contact.html
+├─ portraits.html
+├─ travelings.html
 ├─ styles/
 │  └─ site.css
 ├─ scripts/
 │  └─ site.js
 ├─ images/
-├─ fonts/
-└─ WIREFRAMES/
-    └─index.html
-    ├─ about.html
-    ├─ services.html
-    ├─ featured.html
-    ├─ events.html
-    ├─ faq.html
-    ├─ contact.html
-    ├─ portraits.html
-    ├─ travelings.html
+└─ fonts/ 
+    
 
 
 

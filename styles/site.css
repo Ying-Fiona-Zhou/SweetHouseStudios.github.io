@@ -21,6 +21,10 @@ body{
   font-family: "Gotham Book", "Gotham", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
   background: radial-gradient(1200px 700px at 20% 0%, #fff7fb 0%, var(--page-bg) 60%, #ffffff 140%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.75;
 }
 
 html {
@@ -78,10 +82,11 @@ nav li a{
   color: var(--brand);
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   border-radius: 10px;
-  padding: 8px 14px;
-  line-height: 1;
+  padding: 10px 14px;
+  line-height: 1.25;
   position: relative;
   display: inline-block; 
 }
@@ -171,6 +176,7 @@ h2 {
 p{
   color: var(--muted);
   line-height: 1.8;
+  font-size: 1.05rem;
   max-width: 70ch;
 }
 
@@ -203,11 +209,10 @@ figcaption{
   margin-top: 22px;
 }
 
-.gallery-masonry figure {
-  margin: 0;
-  display: inline-block; /* 修复某些浏览器下瀑布流切断图片的 Bug */
-  width: 100%;
-  padding-bottom: 18px; /* 用 padding 代替 margin 确保对齐 */
+.gallery-masonry figure{
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin: 0 0 18px;
 }
 
 .gallery-masonry figure.logo img{
@@ -262,7 +267,7 @@ figure.logo figcaption{
 :root{
   --page-bg: #fff0f5;
   --text: #222;
-  --muted: rgba(17, 24, 39, 0.65);
+  --muted: rgba(17, 24, 39, 0.78);
   --card-bg: #fff;
   --card-border: rgba(0,0,0,0.06);
   --shadow: 0 18px 50px rgba(16,24,40,0.12);
@@ -295,8 +300,8 @@ footer{
   text-align: center;
   margin-top: 56px;
   padding: 26px 18px 30px;
-  font-size: 14px;
-  color: rgba(17,24,39,0.60);
+  font-size: 0.95rem;
+  color: rgba(17, 24, 39, 0.72);
 }
 
 footer p{
